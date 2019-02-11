@@ -1,13 +1,14 @@
 # read file contents into memory
 repos=$(<data/repos.txt)
-sites=~/Sites
+# TODO
+cw=~/Sites
 
-if [ ! -d "$sites" ]; then
+if [ ! -d "$cw" ]; then
     # TODO env
-    mkdir $sites
+    $dry mkdir $cw
 fi
 
 for repo in $repos
 do
-    ($dry cd $sites && $dry git clone $repo)
+    ($dry cd $cw && $dry git clone $repo)
 done

@@ -1,4 +1,4 @@
-sudo easy_install pip
+$dry sudo easy_install pip
 packages=$(<data/pips.txt)
 
 for package in $packages
