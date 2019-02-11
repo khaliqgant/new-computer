@@ -6,6 +6,8 @@ New Computer
 * This is a clone of my [Configuration-Files](https://github.com/khaliqgant/Configuration-Files)
 [install directory](https://github.com/khaliqgant/Configuration-Files/tree/master/install)
 but abstracted out so it's a bit easier to integrate and grok.
+* Read [my medium post](https://medium.com/@khaliqgant/making-setting-up-a-new-computer-less-painful-ed0ef3d8342f)
+for some additional information
 
 # Getting Started
 * This repo is meant to be forked. All of the data files are apps that I personally
