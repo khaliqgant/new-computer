@@ -25,6 +25,12 @@ this set of scripts will simply skip over it.
 prefers you to store your configuration in Dropbox.
 
 # Development
+## Tests
+* Run 
+```
+./tests.sh
+```
+
 ## To Dos
 * Check if the data file has any things to install in it
 * Check if mackup is installed and if there is a brewfile there

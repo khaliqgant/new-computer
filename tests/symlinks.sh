@@ -1,2 +1,2 @@
 export dry="echo"
-(cd .. && sh symlinks.sh)
+(cd ../scripts && sh symlinks.sh)

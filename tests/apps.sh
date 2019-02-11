@@ -1,2 +1,2 @@
 export dry="echo"
-(cd .. && sh apps.sh)
+(cd ../scripts && sh apps.sh)

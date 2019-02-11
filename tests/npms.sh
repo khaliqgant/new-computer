@@ -1,2 +1,2 @@
 export dry="echo"
-(cd .. && sh npms.sh)
+(cd ../scripts && sh npms.sh)

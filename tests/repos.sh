@@ -1,2 +1,2 @@
 export dry="echo"
-(cd .. && sh repos.sh)
+(cd ../scripts && sh repos.sh)
