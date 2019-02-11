@@ -1,0 +1,7 @@
+git@github.com:khaliqgant/khaliqgant.git
+git@github.com:khaliqgant/bootstrap.git
+git@github.com:khaliqgant/finance-app.git
+git@github.com:khaliqgant/remotee-sync.git
+git@github.com:khaliqgant/Alfred-Project-Workflow.git
+git@bitbucket.org:khaliqgant/columbia-repo.git
+git@github.com:khaliqgant/laid-back-vj.git

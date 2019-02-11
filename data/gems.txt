@@ -1,0 +1,4 @@
+bundler
+chef
+compass
+travis

@@ -1,0 +1,3 @@
+phpunit/phpunit
+laravel/installer
+squizlabs/php_codesniffer
