@@ -1,10 +1,10 @@
 # read file contents into memory
 repos=$(<data/repos.txt)
-# TODO
-cw=~/Sites
+projects=$(parse_env "PROJECTS")
+cw=~/$projects
+
 
 if [ ! -d "$cw" ]; then
-    # TODO env
     $dry mkdir $cw
 fi
 

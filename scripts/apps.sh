@@ -15,9 +15,12 @@ do
     $dry brew cask install $app
 done
 
-# TODO check env
-small_output "Installing sshpass"
-$dry brew install https://raw.githubusercontent.com/kadwanev/bigboybrew/master/Library/Formula/sshpass.rb
+include_sshpass=$(parse_env "INCLUDE_SSHPASS")
+
+if [[ "$include_sshpass" == "true" ]]; then
+    small_output "Installing sshpass"
+    $dry brew install https://raw.githubusercontent.com/kadwanev/bigboybrew/master/Library/Formula/sshpass.rb
+fi
 
 # TODO check env
 small_output "installing brew deps"
