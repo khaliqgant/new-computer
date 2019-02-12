@@ -1,5 +1,3 @@
-#!/bin/shell
-
 source helpers.sh
 
 if [[ "$1" == "--dry" ]]; then
@@ -15,40 +13,40 @@ set -euo pipefail
 # export dry for the other scripts
 export dry=$dry
 
-if [ -f ./data/gems.txt]; then
+if [[ -f "./data/gems.txt" ]]; then
     output "Setting up Ruby"
-    sh rvm-setup.sh
+    sh ./scripts/rvm-setup.sh
 else
     small_output "gems.txt not found in the data directory, so skipping installing the ruby installation"
 fi
 
 output "Downloading homebrew and cask apps"
-sh apps.sh
+sh ./scripts/apps.sh
 
-if [ -f ./data/npms.txt]; then
+if [[ -f "./data/npms.txt" ]]; then
     output "Setting up npm global packages"
-    sh npms.sh
+    sh ./scripts/npms.sh
 else
     small_output "npms.txt not found in the data directory, so skipping installing the npm installation"
 fi
 
-if [ -f ./data/composers.txt]; then
+if [[ -f "./data/composers.txt" ]]; then
     output "Installing PHP global composer packages"
-    sh composer.sh
+    sh ./scripts/composer.sh
 else
     small_output "composers.txt not found in the data directory, so skipping installing the composer installation"
 fi
 
-if [ -f ./data/pips.txt]; then
+if [[ -f "./data/pips.txt" ]]; then
     output "Installing Python global pips"
-    sh pip.sh
+    sh ./scripts/pip.sh
 else
     small_output "pips.txt not found in the data directory, so skipping installing the Python installation"
 fi
 
-if [ -f ./data/repos.txt]; then
+if [[ -f "./data/repos.txt" ]]; then
     output "Cloning repos"
-    sh repos.sh
+    sh ./scripts/repos.sh
 else
     small_output "repos.txt not found in the data directory, so skipping installing any git repos"
 fi
@@ -57,4 +55,3 @@ output "Restoring mackup settings"
 if type "mackup" > /dev/null; then
     $dry mackup restore
 fi
-
