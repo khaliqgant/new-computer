@@ -12,29 +12,49 @@ fi
 # https://vaneyckt.io/posts/safer_bash_scripts_with_set_euxo_pipefail/
 set -euo pipefail
 
-
 # export dry for the other scripts
 export dry=$dry
 
-output "Setting up Ruby"
-sh rvm-setup.sh
+if [ -f ./data/gems.txt]; then
+    output "Setting up Ruby"
+    sh rvm-setup.sh
+else
+    small_output "gems.txt not found in the data directory, so skipping installing the ruby installation"
+fi
 
 output "Downloading homebrew and cask apps"
 sh apps.sh
 
-output "Setting up npm global packages"
-sh npms.sh
+if [ -f ./data/npms.txt]; then
+    output "Setting up npm global packages"
+    sh npms.sh
+else
+    small_output "npms.txt not found in the data directory, so skipping installing the npm installation"
+fi
 
-output "Installing PHP global composer packages"
-sh composer.sh
+if [ -f ./data/composers.txt]; then
+    output "Installing PHP global composer packages"
+    sh composer.sh
+else
+    small_output "composers.txt not found in the data directory, so skipping installing the composer installation"
+fi
 
-output "Installing Python global pips"
-sh pip.sh
+if [ -f ./data/pips.txt]; then
+    output "Installing Python global pips"
+    sh pip.sh
+else
+    small_output "pips.txt not found in the data directory, so skipping installing the Python installation"
+fi
 
-output "Cloning repos"
-sh repos.sh
+if [ -f ./data/repos.txt]; then
+    output "Cloning repos"
+    sh repos.sh
+else
+    small_output "repos.txt not found in the data directory, so skipping installing any git repos"
+fi
 
 output "Restoring mackup settings"
-# todo check if mackup exists
-$dry mackup restore
+if type "mackup" > /dev/null; then
+    $dry mackup restore
+fi
 
