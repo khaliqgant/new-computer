@@ -8,7 +8,7 @@ $dry brew install caskroom/cask/brew-cask
 $dry export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # install all the apps
-if [ -f ./data/apps.txt]; then
+if [[ -f "./data/apps.txt" ]]; then
     apps=$(<data/apps.txt)
     small_output "Installing apps on apps on apps"
     for app in $apps
